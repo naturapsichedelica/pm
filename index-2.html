@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Il mio spazio personale</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header, section, footer {
+      padding: 2em;
+      max-width: 1000px;
+      margin: auto;
+    }
+    header {
+      background: #333;
+      color: white;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+    .promo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5em;
+      margin-top: 1.5em;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1em;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .card button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #blog-articles article {
+      background: white;
+      padding: 1em;
+      margin-bottom: 1em;
+      border-left: 4px solid #333;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Benvenuto nel mio spazio</h1>
+  <nav>
+    <a href="#promo">Promozione</a>
+    <a href="#blog">Blog</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+</header>
+
+<section id="promo">
+  <h2>Cosa Offro</h2>
+  <div class="promo">
+    <div class="card">
+      <h3>Videocorso</h3>
+      <p>Scopri il mio corso esclusivo su Udemy: "Piante Maestre". Unisciti al viaggio!</p>
+      <button onclick="window.open('https://www.udemy.com')">Scopri di più</button>
+    </div>
+    <div class="card">
+      <h3>Libro</h3>
+      <p>Leggi il mio libro per approfondire il legame tra piante cerimoniali e neurochimica.</p>
+      <button onclick="window.open('#')">Acquista ora</button>
+    </div>
+    <div class="card">
+      <h3>Consulenze</h3>
+      <p>Offro consulenze personalizzate su benessere, piante e percorsi individuali.</p>
+      <button onclick="window.open('#')">Prenota una sessione</button>
+    </div>
+    <div class="card">
+      <h3>Eventi</h3>
+      <p>Partecipa ai prossimi eventi e ritiri per un’esperienza trasformativa.</p>
+      <button onclick="window.open('#')">Scopri i prossimi</button>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <h2>Blog</h2>
+  <div id="blog-articles">
+    <!-- Articoli caricati dinamicamente -->
+  </div>
+</section>
+
+<section id="contatti">
+  <h2>Contattami</h2>
+  <p>Scrivimi a <a href="mailto:tuo@email.com">tuo@email.com</a> oppure seguimi sui social:</p>
+  <p>
+    <a href="https://facebook.com" target="_blank">Facebook</a> |
+    <a href="https://instagram.com" target="_blank">Instagram</a> |
+    <a href="https://youtube.com" target="_blank">YouTube</a>
+  </p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Il Mio Nome - Tutti i diritti riservati</p>
+</footer>
+
+<script>
+  // Esempio di caricamento dinamico di articoli
+  const articles = [
+    {
+      title: "Introduzione alle Piante Maestre",
+      date: "2025-05-20",
+      content: "Le piante maestre sono strumenti potenti di consapevolezza. In questo articolo esploriamo i principi base..."
+    },
+    {
+      title: "Neurochimica della trasformazione",
+      date: "2025-05-25",
+      content: "Il cervello umano risponde in modi affascinanti all'influenza delle sostanze naturali. Vediamo insieme come..."
+    }
+  ];
+
+  const blogContainer = document.getElementById('blog-articles');
+  articles.forEach(article => {
+    const el = document.createElement('article');
+    el.innerHTML = `<h3>${article.title}</h3><small>${article.date}</small><p>${article.content}</p>`;
+    blogContainer.appendChild(el);
+  });
+</script>
+
+</body>
+</html>
